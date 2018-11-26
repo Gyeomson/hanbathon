@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   #참가자 정보
   get 'recruits', to: 'recruits#index'
-  get 'recruits', to: 'recruits#show'
+  get 'recruits/:id/:name', to: 'recruits#show', as: 'user_show'
   get 'recruits/sign_up', to: 'recruits#sign_up'
   post 'recruits/sign_up', to: 'recruits#create'
   get 'recruits/edit/:id/:name', to: 'recruits#edit', as: 'user_edit'

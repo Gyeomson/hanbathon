@@ -10,7 +10,7 @@ class RecruitsController < ApplicationController
   end
   def go
     user = User.where(user_sign_in).take
-    redirect_to user_edit_url(user.id, user.name)
+    redirect_to user_show_path(user.id, user.name)
   end
   def sign_up
     @user = User.new
@@ -26,7 +26,7 @@ class RecruitsController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to recruits_url
+    redirect_to user_show_url
   end
   
   def destroy
@@ -38,7 +38,7 @@ class RecruitsController < ApplicationController
       @user = User.find(params[:id])
     end
     def user_params
-      params.require(:user).permit(:name, :email, :id_number, :university, :mobile, :text1, :text2, :text3, :text4, :text5)
+      params.require(:user).permit(:name, :email, :id_number, :university, :mobile, :major, :text1, :text2, :text3, :text4, :text5)
     end
     def user_sign_in
       params.require(:user).permit(:name, :email, :id_number)
