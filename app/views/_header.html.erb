@@ -1,0 +1,28 @@
+<!-- Navigation -->
+<nav class="navbar bg-dark text-uppercase" id="main_header">
+    <div class="" id="home">
+        <%= link_to root_path , class: "orange", id: "" do %>
+            <i class="fas fa-home fa-2x"></i>
+        <%end%>
+    </div>
+    <div class="navbar-brand h-80 m-0 p-0" id="logo">
+        <%= link_to root_path , class: "" do %>
+            <img id="main-logo" class="h-100 logo-1" src="<%=asset_path 'header/likelion.png'%>" alt="멋쟁이 사자처럼" />
+            <img id="main-logo" class="h-100 logo-2" src="<%=asset_path 'header/likelion_mobile.png'%>" alt="멋쟁이 사자처럼" />
+        <%end%>
+    </div>
+
+    <div class="">
+      <%= link_to "참가하기" , recruits_path , class: "nav-link white"%>
+    </div>
+</nav>
+<script>
+    $(function () {
+        $("#logo").position({
+          of: $( "#main_header"),
+          my: "center center",
+          at: "center center"
+        });
+        
+      });
+</script>

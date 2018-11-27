@@ -18,4 +18,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//제이쿼리
+//= require jquery-ui
 

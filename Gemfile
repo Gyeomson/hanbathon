@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 #custom
 gem 'bootstrap'
 gem 'rails_db'
+gem 'jquery-ui-rails'
+#fancy icon
+gem 'font-awesome-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

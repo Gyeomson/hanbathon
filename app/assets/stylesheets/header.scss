@@ -1,0 +1,23 @@
+#main_header{
+    height: 8%;
+    .nav-link{
+        background-color: #ff921b!important;
+        padding: 0.3rem 0.5rem;
+        border-radius: 2rem!important;
+    }
+    .logo-1{
+        display: none;
+    }
+    .logo-2{
+        display: inline;
+    }
+    @media (min-width: 576px) {
+        .logo-1{
+            display: inline;
+        }
+        .logo-2{
+            display: none;
+        }
+    }
+    
+}
