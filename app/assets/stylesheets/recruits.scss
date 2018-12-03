@@ -5,12 +5,56 @@
         grid-template-columns: 50% 50%;
         grid-template-rows: 100%;
     }
+    .event-title-mobile{
+        margin-top: auto!important;
+        margin-bottom: auto!important;
+    }
+    .poster-desk{
+        display: none;
+    }
+    .poster-mobile{
+        display: block;
+    }
+     @media (min-width: 576px) {
+        .poster-desk{
+            display: block;
+        }
+        .poster-mobile{
+            display: none;
+        }
+    }
 }
 .recruits-sign_up{
     .header{
         
     }
+    .main-logo{
+        width: 90%!important;
+    }
+    .form{
+        width: 100%!important;
+         
+    }
+    @media (min-width: 576px) {
+        .form{
+            width: 60%!important;
+        }
+        .main-logo{
+            width: 40%!important;
+        }
+    }
     .select-center{
         text-align-last: center;
+    }
+}
+.recruits-sign_in{
+    .form{
+        width: 100%!important;
+         
+    }
+    @media (min-width: 576px) {
+        .form{
+            width: 60%!important;
+        }
     }
 }

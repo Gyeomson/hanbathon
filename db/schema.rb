@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20181125140554) do
     t.string   "grade"
     t.string   "mobile"
     t.string   "major"
-    t.string   "text1"
-    t.string   "text2"
-    t.string   "text3"
-    t.string   "text4"
-    t.string   "text5"
+    t.text     "text1"
+    t.text     "text2"
+    t.text     "text3"
+    t.text     "text4"
+    t.text     "text5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

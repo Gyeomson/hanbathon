@@ -1,7 +1,7 @@
 <%=render '/header'%>
-<div class="container h-92">
+<div class="container recruits-sign_in h-92">
     <div class="main h-90">
-        <div class="form w-50 mx-auto my-5 p-5 bdr-5 bg-lightgray">
+        <div class="form mx-auto my-5 p-4 bdr-3 bg-lightgray">
             <h1 class="text-center">로그인</h1>
             <%=simple_form_for(@user, url: recruits_go_path, method: :post, class: '') do |u| %>
                 <div class="text-center">
