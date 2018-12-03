@@ -38,7 +38,7 @@ class RecruitsController < ApplicationController
       @user = User.find(params[:id])
     end
     def user_params
-      params.require(:user).permit(:name, :email, :id_number, :university, :mobile, :major, :text1, :text2, :text3, :text4, :text5)
+      params.require(:user).permit(:name, :email, :id_number, :university, :grade, :mobile, :major, :text1, :text2, :text3, :text4, :text5)
     end
     def user_sign_in
       params.require(:user).permit(:name, :email, :id_number)

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20181125140554) do
     t.string   "email"
     t.string   "id_number"
     t.string   "university"
+    t.string   "grade"
     t.string   "mobile"
     t.string   "major"
     t.string   "text1"

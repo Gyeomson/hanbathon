@@ -1,9 +1,8 @@
-<div class="container">
-    <div class="header my-5">
-        <h1 class="text-center">로그인</h1>
-    </div>
-    <div class="main">
-        <div class="form">
+<%=render '/header'%>
+<div class="container h-92">
+    <div class="main h-90">
+        <div class="form w-50 mx-auto my-5 p-5 bdr-5 bg-lightgray">
+            <h1 class="text-center">로그인</h1>
             <%=simple_form_for(@user, url: recruits_go_path, method: :post, class: '') do |u| %>
                 <div class="text-center">
                     <%=u.label :email, "이메일"%>
@@ -12,7 +11,8 @@
                     <%=u.text_field :name, required: true, class: 'form-control text-center'%>
                     <%=u.label :id_number, "학번"%>
                     <%=u.text_field :id_number, required: true, class: 'form-control text-center'%>
-                    <%=u.button :submit, "sign in", class: 'form-control btn-primary'%>
+                    </br>
+                    <%=u.button :submit, "sign in", class: 'w-100 btn btn-orange'%>
                 </div>
             <%end%>
         </div>
