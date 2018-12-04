@@ -23,7 +23,7 @@
         }
     }
 }
-.recruits-sign_up{
+.recruits-sign_up, .recruits-edit, .recruits-show{
     .header{
         
     }
@@ -58,8 +58,6 @@
     }
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+.form-error{
+    color: red;
 }

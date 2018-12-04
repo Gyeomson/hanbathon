@@ -6,14 +6,24 @@
                 <h1 class="text-center">로그인</h1>
                 <%=simple_form_for(@user, url: recruits_go_path, method: :post, class: '') do |u| %>
                     <div class="text-center">
-                        <%=u.label :email, "이메일"%>
-                        <%=u.email_field :email, required: true, class: 'form-control text-center'%>
-                        <%=u.label :name, "이름"%>
-                        <%=u.text_field :name, required: true, class: 'form-control text-center'%>
-                        <%=u.label :id_number, "학번"%>
-                        <%=u.text_field :id_number, required: true, class: 'form-control text-center'%>
-                        </br>
-                        <%=u.button :submit, "sign in", class: 'w-100 btn btn-orange'%>
+                        <p>
+                            <%=u.label :email, "이메일"%>
+                            <%=u.email_field :email, class: 'form-control text-center'%>
+                            <div class="form-error error-email"></div>
+                        </p>
+                        <p>
+                            <%=u.label :name, "이름"%>
+                            <%=u.text_field :name, class: 'form-control text-center'%>
+                            <div class="form-error error-name"></div>
+                        </p>
+                        <p>
+                            <%=u.label :id_number, "학번"%>
+                            <%=u.text_field :id_number, class: 'form-control text-center'%>
+                            <div class="form-error error-id_num"></div>
+                        </p>
+                        <p>
+                            <%=u.button :submit, "로그인", class: 'w-100 btn btn-orange'%>
+                        </p>
                     </div>
                 <%end%>
             </div>

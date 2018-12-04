@@ -17,14 +17,17 @@
                         <p class='form-name'>
                             <%=u.label :name, "이름*"%>
                             <%=u.text_field :name, autocomplete: "off",class: 'form-control form-size text-center'%>
+                            <div class="error-name form-error"></div>
                         </p>
                         <p class='form-email'>
                             <%=u.label :email, "이메일*"%>
                             <%=u.email_field :email, required: true, autocomplete: "off", class: 'form-control text-center'%>
+                            <div class="error-email form-error"></div>
                         </p>
                         <p class='form-mobile'>
                             <%=u.label :mobile, "휴대폰*"%>
                             <%=u.text_field :mobile, required: true, autocomplete: "off", class: 'form-control text-center', placeholder: 'EX) 010-xxxx-xxxx'%>
+                            <div class="error-mobile form-error"></div>
                         </p>
                         <p class='form-university'>
                             <%=u.label :university, "학교*"%>
@@ -33,6 +36,7 @@
                               <option value="한밭대학교"  class="text-center">한밭대학교</option>
                               <option value="목원대학교"  class="form-select">목원대학교</option>
                             </select>
+                            <div class="error-university form-error"></div>
                         </p>
                         <p class='form-grade'>
                             <%=u.label :grade, "학년*"%>
@@ -43,14 +47,17 @@
                               <option value="3">3</option>
                               <option value="4">4</option>
                             </select>
+                            <div class="error-grade form-error"></div>
                         </p>
                         <p class='form-id_number'>
                             <%=u.label :id_number, "학번*"%>
                             <%=u.text_field :id_number, required: true, autocomplete: "off", class: 'form-control text-center'%>
+                            <div class="error-id_num form-error"></div>
                         </p>
                         <p class='form-major'>
                             <%=u.label :major, "전공*"%>
                             <%=u.text_field :major, required: true, autocomplete: "off", class: 'form-control text-center'%>
+                            <div class="error-major form-error"></div>
                         </p>
                         <p class="text-left">
                             <%=u.label :text1, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>

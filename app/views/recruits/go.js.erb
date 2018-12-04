@@ -1,0 +1,25 @@
+
+var $name = $('.error-name');
+var $email = $('.error-email');
+var $id_num = $('.error-id_num');
+
+<%if @bool %>
+    <%if @user.errors[:name].any?%>
+        $name.empty();
+        $name.append("<%=@user.errors[:name].first%>");
+    <%else%>
+        $name.empty();
+    <%end%>
+    <%if @user.errors[:email].any?%>
+        $email.empty();
+        $email.append("<%=@user.errors[:email].first%>");
+    <%else%>
+        $email.empty();
+    <%end%>
+    <%if @user.errors[:id_number].any?%>
+        $id_num.empty();
+        $id_num.append("<%=@user.errors[:id_number].first%>");
+    <%else%>
+        $id_num.empty();
+    <%end%>
+<%end%>

@@ -54,7 +54,7 @@
         </div>
         <div class="main">
             <div class="form mx-auto bg-light p-4 bdr-3">
-                <%=simple_form_for(@user, url: recruits_sign_up_path, method: :post, class: '') do |u| %>
+                <%=simple_form_for(@user, url: '#' , class: '') do |u| %>
                     <div class="text-center">
                         <div class=""></div>
                         <%=u.label :name, "이름"%>
@@ -98,7 +98,7 @@
                             <%=link_to "삭제하기", user_destroy_path(@user.id, @user.name), method: :delete , class: "w-44 btn btn-danger", data: { confirm: "삭제하시겠습니까?" }%>
                         </div>
                         </br>
-                        <%=u.button :submit, "제출하기", class: 'w-90 btn-orange'%>
+                        <%=link_to "제출하기", recruits_path , class: "w-90 btn btn-orange", data: { confirm: "제출하시겠습니까?" }%>
                         </br>
                     </div>
                 <%end%>

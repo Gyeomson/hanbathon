@@ -9,8 +9,16 @@ class RecruitsController < ApplicationController
     @user = User.new
   end
   def go
-    user = User.where(user_sign_in).take
-    redirect_to user_show_url(user.id, user.name)
+  #   @email =  User.where(user_email).exists?
+  #   puts @email.name
+  #   if @email
+  #     if((@email.name == user_name)&&(@email.id_number == user_id))
+  #   end
+    
+    if User.where(user_email).exists?
+      user = User.where(user_sign_in).take
+      redirect_to user_show_url(user.id, user.name)
+    end
   end
   def sign_up
       @user = User.new
@@ -28,8 +36,11 @@ class RecruitsController < ApplicationController
   end
   def update
     @user = User.find(params[:id])
+    @user.valid?
     @user.update(user_params)
-    redirect_to user_show_url
+    if @user.valid?
+      redirect_to user_show_url
+    end
   end
   
   def destroy
@@ -45,5 +56,14 @@ class RecruitsController < ApplicationController
     end
     def user_sign_in
       params.require(:user).permit(:name, :email, :id_number)
+    end
+    def user_email
+      params.require(:user).permit(:email)
+    end
+    def user_name
+      params.require(:user).permit(:name)
+    end
+    def user_id
+      params.require(:user).permit(:id_number)
     end
 end
