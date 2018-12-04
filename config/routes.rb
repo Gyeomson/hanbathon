@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   delete 'recruits/destroy/:id/:name', to: 'recruits#destroy', as: 'user_destroy'
   get 'recruits/sign_in', to: 'recruits#sign_in'
   post 'recruits/go', to: 'recruits#go'
-
+  
+  # 지원자 확인용
+  get 'likelion/recruits/realeverything' to: 'recruits#all'
+  get 'likelion/recruits/realeverything/:id/:name' to 'recruits#one'
 end

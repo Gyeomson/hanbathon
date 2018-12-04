@@ -78,21 +78,26 @@
                         <%=u.label :major, "전공"%>
                         <%=u.text_field :major, required: true, autocomplete: "off", class: 'form-control text-center', readonly: true%>
                         </br>
-                        <%=u.label :text1, "동기1"%>
-                        <%=u.text_area :text1, rows: 5, class: 'form-control', readonly: true%>
-                        </br>
-                        <%=u.label :text2, "동기2"%>
-                        <%=u.text_area :text2, rows: 5, class: 'form-control', readonly: true%>
-                        </br>
-                        <%=u.label :text3, "동기3"%>
-                        <%=u.text_area :text3, rows: 5, class: 'form-control', readonly: true%>
-                        </br>
-                        <%=u.label :text4, "동기4"%>
-                        <%=u.text_area :text4, rows: 5, class: 'form-control', readonly: true%>
-                        </br>
-                        <%=u.label :text5, "동기5"%>
-                        <%=u.text_area :text5, rows: 5, class: 'form-control', readonly: true%>
-                        </br>
+                        <p class="text-left">
+                            <%=u.label :text1, "Q1. 멋쟁이 사자처럼을 알게된 경로와 지원동기를 적어주세요", class: 'px-3'%>
+                            <%=u.text_area :text1, rows: 5, class: 'form-control', readonly: true%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text2, "Q2. 자신이 만들고 싶은 서비스를 설명해주세요", class: 'px-3'%>
+                            <%=u.text_area :text2, rows: 5, class: 'form-control', readonly: true%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text3, "Q3. 프로젝트를 완수한 경험을 적어주세요", class: 'px-3'%>
+                            <%=u.text_area :text3, rows: 5, class: 'form-control', readonly: true%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text4, "Q4. 프로그래밍 강의 혹은 경험이 있다면 적어주세요", class: 'px-3'%>
+                            <%=u.text_area :text4, rows: 5, class: 'form-control', readonly: true%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text5, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            <%=u.text_area :text5, rows: 5, class: 'form-control', readonly: true%>
+                        </p>
                         <div class="">
                             <%=link_to "수정하기", user_edit_path(@user.id, @user.name) , class: "w-44 btn btn-primary"%>
                             <%=link_to "삭제하기", user_destroy_path(@user.id, @user.name), method: :delete , class: "w-44 btn btn-danger", data: { confirm: "삭제하시겠습니까?" }%>

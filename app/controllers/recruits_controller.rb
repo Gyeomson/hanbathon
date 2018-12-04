@@ -9,14 +9,9 @@ class RecruitsController < ApplicationController
     @user = User.new
   end
   def go
-  #   @email =  User.where(user_email).exists?
-  #   puts @email.name
-  #   if @email
-  #     if((@email.name == user_name)&&(@email.id_number == user_id))
-  #   end
-    
+    @bool = User.where(user_email).exists?
+    user = User.where(user_email).take
     if User.where(user_email).exists?
-      user = User.where(user_sign_in).take
       redirect_to user_show_url(user.id, user.name)
     end
   end
