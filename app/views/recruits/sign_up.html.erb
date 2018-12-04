@@ -9,56 +9,72 @@
         </div>
         <div class="main">
             <div class="form mx-auto bg-light p-4 bdr-3">
-                <%=simple_form_for(@user, url: recruits_sign_up_path, method: :post, class: '') do |u| %>
+                <%=simple_form_for(@user, url: recruits_sign_up_path, remote: true, method: :post, class: '') do |u| %>
                     <div class="text-center">
-                        <div class=""></div>
-                        <%=u.label :name, "이름"%>
-                        <%=u.text_field :name, required: true, autocomplete: "off",class: 'form-control form-size text-center'%>
-                        </br>
-                        <%=u.label :email, "이메일"%>
-                        <%=u.email_field :email, required: true, autocomplete: "off", class: 'form-control text-center'%>
-                        </br>
-                        <%=u.label :mobile, "휴대폰"%>
-                        <%=u.text_field :mobile, required: true, autocomplete: "off", class: 'form-control text-center', placeholder: 'EX) 010-xxxx-xxxx'%>
-                        </br>
-                        <%=u.label :university, "학교"%>
-                        <select name="user[university]" id="" class="form-control select-center text-center" readonly=true>
-                          <option value="" selected="selected" class="form-select"></option>
-                          <option value="한밭대학교"  class="text-center">한밭대학교</option>
-                          <option value="목원대학교"  class="form-select">목원대학교</option>
-                        </select>
-                        </br>
-                        <%=u.label :grade, "학년"%>
-                        <select name="user[grade]" id="" class="form-control select-center" readonly=true>
-                          <option value="" selected="selected"></option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                        </select>
-                        </br>
-                        <%=u.label :id_number, "학번"%>
-                        <%=u.text_field :id_number, required: true, autocomplete: "off", class: 'form-control text-center'%>
-                        </br>
-                        <%=u.label :major, "전공"%>
-                        <%=u.text_field :major, required: true, autocomplete: "off", class: 'form-control text-center'%>
-                        </br>
-                        <%=u.label :text1, "동기1"%>
-                        <%=u.text_area :text1, rows: 5, class: 'form-control'%>
-                        </br>
-                        <%=u.label :text2, "동기2"%>
-                        <%=u.text_area :text2, rows: 5, class: 'form-control'%>
-                        </br>
-                        <%=u.label :text3, "동기3"%>
-                        <%=u.text_area :text3, rows: 5, class: 'form-control'%>
-                        </br>
-                        <%=u.label :text4, "동기4"%>
-                        <%=u.text_area :text4, rows: 5, class: 'form-control'%>
-                        </br>
-                        <%=u.label :text5, "동기5"%>
-                        <%=u.text_area :text5, rows: 5, class: 'form-control'%>
-                        </br>
-                        <%=u.button :submit, "제출하기", class: 'w-100 btn-orange'%>
+                        <div class="w-100 text-right px-3">
+                            * 는 필수항목 입니다.
+                        </div>
+                        <p class='form-name'>
+                            <%=u.label :name, "이름*"%>
+                            <%=u.text_field :name, autocomplete: "off",class: 'form-control form-size text-center'%>
+                        </p>
+                        <p class='form-email'>
+                            <%=u.label :email, "이메일*"%>
+                            <%=u.email_field :email, required: true, autocomplete: "off", class: 'form-control text-center'%>
+                        </p>
+                        <p class='form-mobile'>
+                            <%=u.label :mobile, "휴대폰*"%>
+                            <%=u.text_field :mobile, required: true, autocomplete: "off", class: 'form-control text-center', placeholder: 'EX) 010-xxxx-xxxx'%>
+                        </p>
+                        <p class='form-university'>
+                            <%=u.label :university, "학교*"%>
+                            <select name="user[university]" id="" class="form-control select-center text-center" readonly=true>
+                              <option value="" selected="selected" class="form-select"></option>
+                              <option value="한밭대학교"  class="text-center">한밭대학교</option>
+                              <option value="목원대학교"  class="form-select">목원대학교</option>
+                            </select>
+                        </p>
+                        <p class='form-grade'>
+                            <%=u.label :grade, "학년*"%>
+                            <select name="user[grade]" id="" class="form-control select-center" readonly=true>
+                              <option value="" selected="selected"></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                        </p>
+                        <p class='form-id_number'>
+                            <%=u.label :id_number, "학번*"%>
+                            <%=u.text_field :id_number, required: true, autocomplete: "off", class: 'form-control text-center'%>
+                        </p>
+                        <p class='form-major'>
+                            <%=u.label :major, "전공*"%>
+                            <%=u.text_field :major, required: true, autocomplete: "off", class: 'form-control text-center'%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text1, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            <%=u.text_area :text1, rows: 5, class: 'form-control'%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text2, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            <%=u.text_area :text2, rows: 5, class: 'form-control'%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text3, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            <%=u.text_area :text3, rows: 5, class: 'form-control'%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text4, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            <%=u.text_area :text4, rows: 5, class: 'form-control'%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text5, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            <%=u.text_area :text5, rows: 5, class: 'form-control'%>
+                        </p>
+                        <p>
+                            <%=u.button :submit, "제출하기", class: 'w-100 btn-orange'%>
+                        </p>
                     </div>
                 <%end%>
             </div>

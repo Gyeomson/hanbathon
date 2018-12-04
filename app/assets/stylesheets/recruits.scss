@@ -6,8 +6,7 @@
         grid-template-rows: 100%;
     }
     .event-title-mobile{
-        margin-top: auto!important;
-        margin-bottom: auto!important;
+        
     }
     .poster-desk{
         display: none;
@@ -57,4 +56,10 @@
             width: 60%!important;
         }
     }
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
 }

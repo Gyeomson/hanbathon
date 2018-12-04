@@ -10,15 +10,18 @@ class RecruitsController < ApplicationController
   end
   def go
     user = User.where(user_sign_in).take
-    redirect_to user_show_path(user.id, user.name)
+    redirect_to user_show_url(user.id, user.name)
   end
   def sign_up
-    @user = User.new
+      @user = User.new
   end
   def create
-    user = User.new(user_params)
-    user.save
-    redirect_to recruits_url
+    @user = User.new(user_params)
+    @user.valid?
+    if @user.valid?  #유효성 검사후 에러 추출
+      @user.save
+      redirect_to recruits_url
+    end
   end
   def edit
     @user = User.find(params[:id])

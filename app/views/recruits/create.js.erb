@@ -1,0 +1,32 @@
+
+var $name = $('.form-name');
+var $email = $('.form-email');
+var $mobile = $('.form-mobile');
+var $university = $('.form-university');
+var $grade = $('.form-grade');
+var $id_num = $('.form-id_number');
+var $major = $('.form-major');
+
+<%if @user.errors.any?%>
+    <%if @user.errors[:name].any?%>
+        $name.append("<%=@user.errors[:name].first%>");
+    <%end%>
+    <%if @user.errors[:email].any?%>
+        $email.append("<%=@user.errors[:email].first%>");
+    <%end%>
+    <%if @user.errors[:mobile].any?%>
+        $mobile.append("<%=@user.errors[:mobile].first%>");
+    <%end%>
+    <%if @user.errors[:university].any?%>
+        $university.append("<%=@user.errors[:university].first%>");
+    <%end%>
+    <%if @user.errors[:grade].any?%>
+        $grade.append("<%=@user.errors[:grade].first%>");
+    <%end%>
+    <%if @user.errors[:id_number].any?%>
+        $id_num.append("<%=@user.errors[:id_number].first%>");
+    <%end%>
+    <%if @user.errors[:major].any?%>
+        $major.append("<%=@user.errors[:major].first%>");
+    <%end%>
+<%end%>
