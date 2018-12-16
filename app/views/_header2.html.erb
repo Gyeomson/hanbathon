@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar bg-dark text-uppercase" id="mainheader">
+<nav class="navbar bg-dark text-uppercase" id="main_header">
     <div class="" id="home">
         <%= link_to root_path , class: "orange", id: "" do %>
             <i class="fas fa-home fa-2x"></i>
@@ -13,15 +13,16 @@
     </div>
 
     <div class="">
-      <%= link_to "참가하기" , recruits_path , class: "nav-link white"%>
+      <%= link_to "뒤로가기" , likelion_recruits_realeverything_path , class: "nav-link white"%>
     </div>
 </nav>
 <script>
-    $(function (){
-        $("#logo").position({
-          of: $("#mainheader"),
+    $(function () {
+        $("#main-logo").position({
+          of: $( "#main_header"),
           my: "center center",
           at: "center center"
         });
+        
       });
 </script>

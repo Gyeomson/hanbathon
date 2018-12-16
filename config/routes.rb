@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   #메인 페이지
   get 'homes/index', to: 'homes#index'
+  get 'homes/index2', to: 'homes#index2'
   
   #참가자 정보
   get 'recruits', to: 'recruits#index'
@@ -17,6 +18,6 @@ Rails.application.routes.draw do
   post 'recruits/go', to: 'recruits#go'
   
   # 지원자 확인용
-  get 'likelion/recruits/realeverything' to: 'recruits#all'
-  get 'likelion/recruits/realeverything/:id/:name' to 'recruits#one'
+  get 'likelion/recruits/realeverything', to: 'admin#all'
+  get 'likelion/recruits/realeverything/:id', to: 'admin#one', as: 'recruits_show'
 end

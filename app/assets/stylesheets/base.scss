@@ -3,7 +3,20 @@ html, body {
   overflow-x: hidden;
   // overflow-y: hidden;
 }
+// 디스플레이
+.d-grid{
+  display: grid!important;
+}
+.ovf-x-h{
+  overflow-x:hidden;
+}
+.ovf-y-h{
+  overflow-y:hidden;
+}
 // 백그라운드
+.bg-orange{
+  background-color: #ff921b!important;
+}
 .bg-darkgray{
   background-color: #454547!important;
 }
@@ -37,6 +50,9 @@ html, body {
 .h-10{
   height: 10%!important;
 }
+.h-15{
+  height: 15%!important;
+}
 .h-20{
   height: 20%!important;
 }
@@ -45,6 +61,9 @@ html, body {
 }
 .h-40{
   height: 40%!important;
+}
+.h-55{
+  height: 55%!important;
 }
 .h-60{
   height: 60%!important;
@@ -60,6 +79,9 @@ html, body {
 }
 .h-84{
   height: 84%!important;
+}
+.h-85{
+  height: 85%!important;
 }
 .h-80{
   height: 80%!important;

@@ -1,0 +1,25 @@
+<%=render '/header'%>
+<h1>지원자</h1>
+<d>
+    <table class="table table-bordered">
+        <tr>
+            <th>이름</th>
+            <th>학년</th>
+            <th>학교</th>
+            <th>핸드폰</th>
+            <th>메일</th>
+        </tr>
+        
+        <% @users.each do |user| %>
+        
+        <tr>
+            
+            <td><a href="/likelion/recruits/realeverything/<%= user.id %>"><%=user.name%></a></td>
+            <td><%=user.grade%></td>
+            <td><%=user.university%></td>
+            <td><%=user.mobile%></td>
+            <td><%=user.email%></td>
+            <%end%>
+        </tr>
+    </table>
+    

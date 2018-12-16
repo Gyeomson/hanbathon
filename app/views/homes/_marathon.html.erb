@@ -1,0 +1,106 @@
+<div class="container">
+    <button>animation test button</button>
+    <button class="direct left"><<</button>
+    <button class="direct right">>></button>
+    
+    <div class="lion_container" style="background-image: url(<%=asset_path 'marathon/road_background_img.png'%>); background-size: 100% auto;">
+        
+        <div class="baby_lions">아기사자</div>
+        <div class="tree_left">나무</div>
+        <div class="tree_right">나무</div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $( document ).ready(function() {
+        //컨텐츠들 넓이 구하고 위치 재조정
+        $road_width = $(".lion_container").width();
+        $half_width = $road_width/2;
+        $min_width = $road_width/10;
+        $road_total_width = $( '.lion_container' ).outerWidth();
+        $road_margin = ($road_width-$road_total_width)/2;
+        
+        $road_height = 600;
+        $half_height = $road_height/2;
+        $(".lion_container").height(($half_height+100)+'px');
+        
+        $lion_width = $('.baby_lions').width();
+        $tree_width = $('.tree_left').width();
+        
+        
+        console.log('road_width : '+$road_width);
+        console.log('$half_width : '+$half_width);
+        console.log('$min_width : '+$min_width);
+        console.log('$lion_width : '+$lion_width);
+        console.log('$tree_width : '+$tree_width);
+        
+        $(".baby_lions").animate({
+                            top: $half_height+'px', 
+                            left: ($half_width-$lion_width/2)+'px'
+                        }, 10);
+            
+        $(function() {
+            function left_sideSlide() {
+                $('.tree_left')
+                            .animate({
+                                opacity: '1'
+                            }, 10)
+                            .animate({
+                                left: '0px', 
+                                top: ($half_height)+'px'
+                            }, 2000)
+                            .animate({
+                                opacity: '0'
+                            }, 10)
+                            .animate({
+                                left: ($half_width-$lion_width)+'px', 
+                                top: '0px'
+                            }, 10, left_sideSlide);
+            }
+            left_sideSlide();
+        });
+        
+        $(function() {
+            function right_sideSlide() {
+                $('.tree_right')
+                            .animate({
+                                opacity: '1'
+                            }, 10)
+                            .animate({
+                                left: ($road_width-$lion_width-2*$tree_width)+'px', 
+                                top: $half_height+'px'
+                            }, 2000)
+                            .animate({
+                                opacity: '0'
+                            }, 10)
+                            .animate({
+                                left: ($half_width-$lion_width-2*$tree_width)+'px', 
+                                top: '0px'
+                            }, 10, right_sideSlide);
+            }
+            right_sideSlide();
+        });
+        
+        
+        $( ".right" ).click(function() {
+          $( ".baby_lions" ).animate({ "left": "+=15%" }, "slow" );
+        });
+         
+        $( ".left" ).click(function(){
+          $( ".baby_lions" ).animate({ "left": "-=15%" }, "slow" );
+        });
+        
+        $(window).scroll(function(){ 
+            // $(".baby_lions").animate({right: '250px', bottom:'250px'}, 5000);
+        });
+        
+        
+    });
+    
+    
+    
+</script>

@@ -3,11 +3,14 @@ class RecruitsController < ApplicationController
   def index
     
   end
+  
   def show
   end
+  
   def sign_in
     @user = User.new
   end
+  
   def go
     @bool = User.where(user_email).exists?
     user = User.where(user_email).take
@@ -15,9 +18,11 @@ class RecruitsController < ApplicationController
       redirect_to user_show_url(user.id, user.name)
     end
   end
+  
   def sign_up
       @user = User.new
   end
+  
   def create
     @user = User.new(user_params)
     @user.valid?
@@ -26,9 +31,11 @@ class RecruitsController < ApplicationController
       redirect_to recruits_url
     end
   end
+  
   def edit
     @user = User.find(params[:id])
   end
+  
   def update
     @user = User.find(params[:id])
     @user.valid?
@@ -54,11 +61,5 @@ class RecruitsController < ApplicationController
     end
     def user_email
       params.require(:user).permit(:email)
-    end
-    def user_name
-      params.require(:user).permit(:name)
-    end
-    def user_id
-      params.require(:user).permit(:id_number)
     end
 end

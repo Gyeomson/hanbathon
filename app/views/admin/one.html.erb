@@ -1,0 +1,65 @@
+<%=render '/header2'%>
+<div class="bg-darkgray">
+    <div class="container recruits-edit">
+        <div class="header text-center py-4">
+        </div>
+        <div class="main">
+            <div class="form mx-auto bg-light p-4 bdr-3">
+                <%=simple_form_for(@user, url: recruits_show_path, remote: true , class: '') do |u| %>
+                        <div class="text-center">
+                        <p class='form-name'>
+                            <%=u.label :name, "이름"%>
+                            </br><%=@user.name%>
+                        </p>
+                        <p class='form-email'>
+                            <%=u.label :email, "이메일"%>
+                            </br><%=@user.email%>
+                        </p>
+                        <p class='form-mobile'>
+                            <%=u.label :mobile, "휴대폰"%>
+                            </br><%=@user.mobile%>
+                        </p>
+                        <p class='form-university'>
+                            <%=u.label :university, "학교"%>
+                            </br><%=@user.university%>
+                        </p>
+                        <p class='form-grade'>
+                            <%=u.label :grade, "학년"%>
+                            </br><%=@user.grade%>
+                        </p>
+                        <p class='form-id_number'>
+                            <%=u.label :id_number, "학번"%>
+                            </br><%=@user.id_number%>
+                        </p>
+                        <p class='form-major'>
+                            <%=u.label :major, "전공"%>
+                            </br><%=@user.major%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text1, "Q1. 멋쟁이 사자처럼을 알게된 경로와 지원동기를 적어주세요", class: 'px-3'%>
+                            </br><%=@user.text1%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text2, "Q2. 자신이 만들고 싶은 서비스를 설명해주세요", class: 'px-3'%>
+                            </br><%=@user.text2%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text3, "Q3. 프로젝트를 완수한 경험을 적어주세요", class: 'px-3'%>
+                            </br><%=@user.text3%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text4, "Q4. 프로그래밍 강의 혹은 경험이 있다면 적어주세요", class: 'px-3'%>
+                            </br><%=@user.text4%>
+                        </p>
+                        <p class="text-left">
+                            <%=u.label :text5, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
+                            </br><%=@user.text5%>
+                        </p>
+                        
+                    </div>
+                <%end%>
+            </div>
+            </br></br></br></br></br></br></br>
+        </div>
+    </div>
+</div>
