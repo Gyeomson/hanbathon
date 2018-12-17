@@ -34,10 +34,24 @@
                             <select name="user[university]" id="" class="form-control select-center text-center" readonly=true>
                                 <%if @user.university == '한밭대학교'%>
                                     <option value="한밭대학교" selected="selected" class="text-center">한밭대학교</option>
-                                    <option value="목원대학교"  class="form-select">목원대학교</option>
-                                <%else%>
+                                    <option value="목원대학교" class="form-select">목원대학교</option>
+                                    <option value="한남대학교" class="form-select">한남대학교</option>
+                                    <option value="우송대학교" class="form-select">우송대학교</option>
+                                <%elsif @user.university == '목원대학교'%>
                                     <option value="한밭대학교" class="text-center">한밭대학교</option>
                                     <option value="목원대학교" selected="selected" class="form-select">목원대학교</option>
+                                    <option value="한남대학교" class="form-select">한남대학교</option>
+                                    <option value="우송대학교" class="form-select">우송대학교</option>
+                                <%elsif @user.university == '한남대학교'%>
+                                    <option value="한밭대학교" class="text-center">한밭대학교</option>
+                                    <option value="목원대학교" class="form-select">목원대학교</option>
+                                    <option value="한남대학교" selected="selected" class="form-select">한남대학교</option>
+                                    <option value="우송대학교" class="form-select">우송대학교</option>
+                                <%elsif @user.university == '우송대학교'%>
+                                    <option value="한밭대학교" class="text-center">한밭대학교</option>
+                                    <option value="목원대학교" class="form-select">목원대학교</option>
+                                    <option value="한남대학교" class="form-select">한남대학교</option>
+                                    <option value="우송대학교" selected="selected" class="form-select">우송대학교</option>
                                 <%end%>
                             </select>
                             <div class="error-university form-error"></div>
