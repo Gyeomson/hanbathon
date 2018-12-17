@@ -1,49 +1,4 @@
 <%=render '/header'%>
-<div class="bg-darkgray d-none">
-    <div class="container">
-        <div class="header my-5">
-            <h1 class="text-center"><%=@user.name%>님의 지원서</h1>
-        </div>
-        <div class="main">
-            <div class="form">
-                <%=simple_form_for(@user, url: user_update_path, method: :patch, class: '') do |u| %>
-                    <div class="text-center">
-                        <%=u.label :name, "이름"%>
-                        <%=u.text_field :name, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :email, "이메일"%>
-                        <%=u.email_field :email, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :mobile, "휴대폰"%>
-                        <%=u.text_field :mobile, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :university, "학교"%>
-                        <%=u.text_field :university, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :grade, "학년"%>
-                        <%=u.text_field :grade, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :id_number, "학번"%>
-                        <%=u.text_field :id_number, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :major, "전공"%>
-                        <%=u.text_field :major, required: true, class: 'form-control text-center', readonly: true%>
-                        <%=u.label :text1, "동기1"%>
-                        <%=u.text_field :text1, class: 'form-control', readonly: true%>
-                        <%=u.label :text2, "동기2"%>
-                        <%=u.text_field :text2, class: 'form-control', readonly: true%>
-                        <%=u.label :text3, "동기3"%>
-                        <%=u.text_field :text3, class: 'form-control', readonly: true%>
-                        <%=u.label :text4, "동기4"%>
-                        <%=u.text_field :text4, class: 'form-control', readonly: true%>
-                        <%=u.label :text5, "동기5"%>
-                        <%=u.text_field :text5, class: 'form-control', readonly: true%>
-                        <%#=u.button :submit, "제출하기", class: 'form-control btn-primary'%>
-                        <%=link_to "제출하기", recruits_path , class: "form-control btn btn-primary"%>
-                    </div>
-                <%end%>
-            </div>
-            <div class="">
-                <%=link_to "수정하기", user_edit_path(@user.id, @user.name) , class: "btn btn-primary"%>
-                <%=link_to "삭제하기", user_destroy_path(@user.id, @user.name), method: :delete , class: "btn btn-danger", data: { confirm: "삭제하시겠습니까?" }%>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="bg-darkgray">
     <div class="container recruits-sign_up">
         <div class="header text-center py-4">
@@ -93,10 +48,6 @@
                         <p class="text-left">
                             <%=u.label :text4, "Q4. 프로그래밍 강의 혹은 경험이 있다면 적어주세요", class: 'px-3'%>
                             <%=u.text_area :text4, rows: 5, class: 'form-control', readonly: true%>
-                        </p>
-                        <p class="text-left">
-                            <%=u.label :text5, "Q1. 멋사에 지원하게된 동기가 무엇입니까?", class: 'px-3'%>
-                            <%=u.text_area :text5, rows: 5, class: 'form-control', readonly: true%>
                         </p>
                         <div class="">
                             <%=link_to "수정하기", user_edit_path(@user.id, @user.name) , class: "w-44 btn btn-primary"%>
