@@ -45,7 +45,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '<0.5'
 end
 
 
